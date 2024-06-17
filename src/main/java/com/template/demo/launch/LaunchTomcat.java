@@ -38,10 +38,8 @@ public class LaunchTomcat {
                 w.write("<head>");
                 w.write("<title>"+ title +"</title>");
                 w.write("</head>");
-                w.write("<body>");
-                w.write("<h4>" + greetingMessage + "</h4>");
-                w.write("</body>");
                 w.write("</html>");
+                w.write(greetingMessage );
                 w.flush();
             }
         });
