@@ -19,6 +19,7 @@ public class LaunchTomcat {
     public static void startingTomcatToDisplayGreetings() {
         String port = System.getenv("port") !=null ? System.getenv("port") : rb.getString("port");
         String greetingMessage = rb.getString("server.greetingMessage");
+        String title = rb.getString("server.title");
         String servletName = rb.getString("server.servletName");
         String servletContext = System.getenv("context");
         
@@ -33,7 +34,12 @@ public class LaunchTomcat {
             protected void service(HttpServletRequest req, HttpServletResponse resp)
                     throws ServletException, IOException {
                 Writer w = resp.getWriter();
-                w.write(greetingMessage);
+                w.write("<html>");
+                w.write("<head>");
+                w.write("<title>"+ title +"</title>");
+                w.write("</head>");
+                w.write("</html>");
+                w.write(greetingMessage );
                 w.flush();
             }
         });
