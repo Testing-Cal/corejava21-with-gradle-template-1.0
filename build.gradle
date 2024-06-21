@@ -31,20 +31,10 @@ repositories {
 
 dependencies {
 	testImplementation group: 'junit', name: 'junit', version: '4.12'
-//    compile group: 'org.springframework', name: 'spring-core', version: '5.3.2'
-//    compile group: 'org.springframework', name: 'spring-web', version: '5.3.2'
-	implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: '8.5.5'
-// https://mvnrepository.com/artifact/org.springframework/spring-context
-//    compile group: 'org.springframework', name: 'spring-context', version: '5.3.2'
-
-	//compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: '8.5.0'
-	/*compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '10.0.0'*/
-	/* compile group: 'org.apache.tomcat', name: 'tomcat-jasper-el', version: '10.0.0'
-     compile group: 'org.apache.tomcat', name: 'tomcat-jsp-api', version: '10.0.0'
-     compile group: 'org.apache.tomcat', name: 'tomcat-jasper', version: '10.0.0'*/
-	implementation group: 'org.apache.tomcat', name: 'tomcat-jasper-el', version: '8.5.5'
-	implementation group: 'org.apache.tomcat', name: 'tomcat-jsp-api', version: '8.5.5'
-	implementation group: 'org.apache.tomcat', name: 'tomcat-jasper', version: '8.5.5'
+	implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: '10.1.5'
+	implementation group: 'org.apache.tomcat', name: 'tomcat-jasper-el', version: '10.1.5'
+	implementation group: 'org.apache.tomcat', name: 'tomcat-jsp-api', version: '10.1.5'
+	implementation group: 'org.apache.tomcat', name: 'tomcat-jasper', version: '10.1.5'
 	implementation group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
 }
 
