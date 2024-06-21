@@ -35,7 +35,7 @@ dependencies {
 	implementation group: 'org.apache.tomcat', name: 'tomcat-jasper-el', version: '10.1.5'
 	implementation group: 'org.apache.tomcat', name: 'tomcat-jsp-api', version: '10.1.5'
 	implementation group: 'org.apache.tomcat', name: 'tomcat-jasper', version: '10.1.5'
-	implementation group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+	implementation group: 'jakarta.servlet', name: 'jakarta.servlet-api', version: '6.0.0'
 }
 
 jar {
