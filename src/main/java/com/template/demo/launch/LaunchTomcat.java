@@ -28,7 +28,7 @@ public class LaunchTomcat {
         Tomcat tomcat = new Tomcat();
         tomcat.setBaseDir("temp");
         tomcat.setPort(Integer.parseInt(port));
-
+        tomcat.getConnector();
         Context ctx = tomcat.addContext("", new File(".").getAbsolutePath());
 
         Tomcat.addServlet(ctx, servletName, new HttpServlet() {
