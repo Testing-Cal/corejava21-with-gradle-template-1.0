@@ -54,7 +54,7 @@ spec:
                 name: {{ $fullName }}
                 port:
                   number: 80
-            pathType: ImplementationSpecific
+            pathType: Prefix
 
           {{- end }}
     {{- end }}
@@ -68,7 +68,7 @@ spec:
                 name: {{ $fullName }}
                 port:
                   number: 80
-            pathType: ImplementationSpecific
+            pathType: Prefix
           {{- end }}
     {{- end }}
   {{- end }}
