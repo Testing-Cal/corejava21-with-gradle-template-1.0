@@ -1,8 +1,0 @@
-Manifest-Version: 1.0
-Class-Path: tomcat-embed-core-8.5.5.jar tomcat-jasper-8.5.5.jar tomcat-j
- asper-el-8.5.5.jar tomcat-jsp-api-8.5.5.jar javax.servlet-api-4.0.1.jar
-  tomcat-el-api-8.5.5.jar tomcat-util-scan-8.5.5.jar tomcat-api-8.5.5.ja
- r tomcat-servlet-api-8.5.5.jar tomcat-util-8.5.5.jar tomcat-juli-8.5.5.
- jar ecj-4.5.1.jar
-Main-Class: com.template.demo.DemoHelloWorld
-
