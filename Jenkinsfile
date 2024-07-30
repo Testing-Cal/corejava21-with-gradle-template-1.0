@@ -208,8 +208,9 @@ pipeline {
     SONAR_CREDENTIAL_ID = "${env.SONAR_CREDENTIAL_ID}"
     STAGE_FLAG = "${STAGE_FLAG}"
     JENKINS_METADATA = "${JENKINS_METADATA}"
-    JAVA_MVN_IMAGE_VERSION = "maven:3.9.6-amazoncorretto-21-debian-bookworm" //https://hub.docker.com/_/maven/tags
-    KUBECTL_IMAGE_VERSION = "bitnami/kubectl:1.24.9" //https://hub.docker.com/r/bitnami/kubectl/tags
+
+    JAVA_MVN_IMAGE_VERSION = "amazoncorretto:21-alpine"
+    KUBECTL_IMAGE_VERSION = "bitnami/kubectl:1.28" //https://hub.docker.com/r/bitnami/kubectl/tags
     HELM_IMAGE_VERSION = "alpine/helm:3.8.1" //https://hub.docker.com/r/alpine/helm/tags   
     OC_IMAGE_VERSION = "quay.io/openshift/origin-cli:4.9.0" //https://quay.io/repository/openshift/origin-cli?tab=tags
 
@@ -309,7 +310,7 @@ pipeline {
                 print(list[i])
                 // stage details here
                 sh """
-                docker run --rm -v "$WORKSPACE":/usr/src/mymaven -w /usr/src/mymaven $JAVA_MVN_IMAGE_VERSION ./gradlew test
+                docker run --rm -v "$WORKSPACE":/opt/repo -w /opt/repo $JAVA_MVN_IMAGE_VERSION ./gradlew test jacocoTestReport
                 """
               }
             } else if ("${list[i]}" == "'SonarQubeScan'" && env.ACTION == 'DEPLOY' && stage_flag['sonarScan']) {
@@ -364,7 +365,7 @@ pipeline {
                 // stage details here
                 echo "echoed BUILD_TAG--- $BUILD_TAG"
                 sh """
-                docker run --rm -v "$WORKSPACE":/usr/src/mymaven -w /usr/src/mymaven $JAVA_MVN_IMAGE_VERSION ./gradlew clean build jacocoTestReport --refresh-dependencies
+                docker run --rm -v "$WORKSPACE":/opt/repo -w /opt/repo $JAVA_MVN_IMAGE_VERSION ./gradlew clean build --refresh-dependencies
                 sudo chown -R `id -u`:`id -g` "$WORKSPACE" 
                 """
               }
