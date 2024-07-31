@@ -86,7 +86,7 @@ web_modules/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
+#.env
 .env.test
 
 # parcel-bundler cache (https://parceljs.org/)
@@ -217,7 +217,7 @@ docs/_build/
 
 # PyBuilder
 .pybuilder/
-target/
+#target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
@@ -407,7 +407,8 @@ gradle-app.setting
 .gradletasknamecache
 
 sonar-report.xml
-
+sonar-result.xml
+!/build/libs/
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
 
